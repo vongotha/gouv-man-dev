@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "npm run build && wrangler pages dev dist",
+    "preview": "npm run build && wrangler dev",
+    "preview:pages": "npm run build && wrangler pages dev dist",
     "check": "astro check",
-    "deploy": "wrangler pages deploy dist --project-name gouvernement-du-maniema"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.6",

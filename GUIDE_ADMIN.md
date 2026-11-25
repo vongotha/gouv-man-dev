@@ -1,6 +1,6 @@
 # Guide d'utilisation de la console d'administration
 
-Ce site utilise **Pages CMS** comme console d'administration. Vous modifiez les textes, les images, les actualités et les communiqués dans une interface simple ; les changements sont enregistrés dans le dépôt GitHub, puis le site est reconstruit automatiquement sur Cloudflare Pages.
+Ce site utilise **Pages CMS** comme console d'administration. Vous modifiez les textes, les images, les actualités et les communiqués dans une interface simple ; les changements sont enregistrés dans le dépôt GitHub. Le déploiement du Worker Cloudflare est ensuite déclenché par l'équipe technique (intégration continue ou commande `npm run deploy`).
 
 ## 1. Se connecter
 
@@ -25,7 +25,7 @@ L'écran d'accueil de Pages CMS affiche :
 1. Ouvrir la rubrique souhaitée.
 2. Modifier les champs.
 3. Cliquer sur **Save** / **Enregistrer**.
-4. Attendre environ 1 à 2 minutes que Cloudflare Pages reconstruise le site.
+4. Attendre que l'équipe technique déploie la nouvelle version du Worker.
 5. Recharger la page du site pour vérifier.
 
 Les textes sont saisis en **paragraphes simples** sur les pages. Les articles et communiqués disposent d'un éditeur **rich-text** pour les titres, listes, liens et citations.
@@ -94,7 +94,7 @@ En cas de doute, demander à l'équipe technique avant de modifier un réglage t
 - **Le site affiche une erreur après une modification** : un champ obligatoire est probablement vide ou un lien est invalide. Corriger le champ, ou revenir à la version précédente dans l'historique GitHub.
 - **Un article n'apparaît pas à la une** : vérifier que le champ « Mettre à la une » est activé et qu'un seul article est sélectionné.
 - **Le formulaire ne répond pas** : vérifier la configuration Resend avec l'équipe technique.
-- **Besoin de revenir en arrière** : Cloudflare Pages conserve les déploiements précédents ; un rollback est possible depuis le dashboard Cloudflare.
+- **Besoin de revenir en arrière** : Cloudflare Workers conserve les versions précédentes ; un rollback est possible depuis le dashboard Cloudflare.
 
 ## 10. Contacts
 
