@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title">
+  <title id="title">Partenaires réunis autour d'un projet commun pour le Maniema</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f5ea"/>
+      <stop offset="1" stop-color="#edf3e7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="960" fill="url(#bg)"/>
+  <circle cx="900" cy="220" r="118" fill="#d9ba6c" opacity=".62"/>
+  <circle cx="900" cy="220" r="158" fill="none" stroke="#c8a24a" stroke-opacity=".22" stroke-width="2"/>
+  <g stroke="#285b3d" stroke-opacity=".1" fill="none" stroke-width="1.5">
+    <path d="M0 280 C210 210 390 320 610 250 S980 200 1200 270"/>
+    <path d="M0 330 C210 260 390 370 610 300 S980 250 1200 320"/>
+    <path d="M0 380 C210 310 390 420 610 350 S980 300 1200 370"/>
+  </g>
+
+  <path d="M0 735 C200 680 380 720 560 738 C760 758 940 705 1200 728 L1200 960 L0 960Z" fill="#d7e8dc"/>
+  <path d="M0 810 C200 765 380 800 560 815 C760 832 940 785 1200 805 L1200 960 L0 960Z" fill="#a9cdb7"/>
+  <path d="M0 870 C200 840 380 865 560 875 C760 886 940 850 1200 865 L1200 960 L0 960Z" fill="#285b3d"/>
+
+  <g>
+    <rect x="270" y="490" width="660" height="300" rx="26" fill="#fffdf7" stroke="#d8d2c2" stroke-width="3"/>
+    <rect x="310" y="530" width="270" height="180" rx="14" fill="#edf3e7"/>
+    <rect x="620" y="530" width="270" height="180" rx="14" fill="#f8f5ea" stroke="#d8d2c2" stroke-width="2"/>
+    <circle cx="445" cy="590" r="36" fill="#d9ba6c"/>
+    <path d="M398 660 q47 -98 94 0Z" fill="#285b3d"/>
+    <circle cx="755" cy="590" r="36" fill="#8fba9f"/>
+    <path d="M708 660 q47 -98 94 0Z" fill="#39784e"/>
+    <path d="M570 640 q30 -24 60 0" stroke="#c8a24a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M600 618 v44" stroke="#c8a24a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g fill="none" stroke="#285b3d" stroke-width="3" stroke-dasharray="7 9" opacity=".65">
+    <path d="M195 390 L380 295 L600 390 L815 295 L1010 390"/>
+    <path d="M380 295 L380 490"/>
+    <path d="M815 295 L815 490"/>
+  </g>
+  <g fill="#285b3d" stroke="#f8f5ea" stroke-width="6">
+    <circle cx="195" cy="390" r="18"/>
+    <circle cx="380" cy="295" r="18"/>
+    <circle cx="600" cy="390" r="22"/>
+    <circle cx="815" cy="295" r="18"/>
+    <circle cx="1010" cy="390" r="18"/>
+  </g>
+  <circle cx="600" cy="390" r="9" fill="#d9ba6c"/>
+
+  <g transform="translate(190 650)">
+    <rect x="-44" y="-44" width="88" height="88" rx="22" fill="#f8f5ea" stroke="#d8d2c2" stroke-width="3"/>
+    <path d="M-20 -2h40v20h-40Z" fill="#285b3d"/>
+    <path d="M-12 -12h24v12h-24Z" fill="#44835c"/>
+    <rect x="-8" y="24" width="16" height="5" rx="2.5" fill="#c8a24a"/>
+  </g>
+
+  <g transform="translate(1000 630)">
+    <rect x="-44" y="-44" width="88" height="88" rx="22" fill="#f8f5ea" stroke="#d8d2c2" stroke-width="3"/>
+    <path d="M-24 8 q24 -38 48 0" fill="none" stroke="#285b3d" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="-10" r="13" fill="#c8a24a"/>
+  </g>
+
+  <path d="M0 890 C210 860 380 890 570 898 C770 908 960 875 1200 892 L1200 960 L0 960Z" fill="#173222"/>
+</svg>

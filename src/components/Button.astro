@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'outline' | 'ghost' | 'white';
+  size?: 'sm' | 'md' | 'lg';
+  arrow?: boolean;
+  icon?: string;
+  class?: string;
+  label?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  arrow = true,
+  icon,
+  class: className = '',
+  label,
+} = Astro.props;
+
+const isExternal = href.startsWith('http');
+const variants = {
+  primary: 'bg-forest-800 text-white hover:bg-forest-950',
+  outline: 'border border-forest-100 text-ink hover:bg-white hover:border-forest-200',
+  ghost: 'text-forest-600 hover:bg-forest-50 hover:text-forest-800',
+  white: 'bg-white text-forest-800 hover:bg-sage-200',
+};
+const sizes = {
+  sm: 'min-h-10 px-4 py-2 text-sm',
+  md: 'min-h-11 px-5 py-3 text-sm',
+  lg: 'min-h-12 px-6 py-3.5 text-base',
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    'group inline-flex items-center justify-center gap-3 rounded-md font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-forest-500',
+    variants[variant],
+    sizes[size],
+    className,
+  ]}
+  aria-label={label}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noreferrer' : undefined}
+>
+  {icon && <Icon name={icon as any} size={18} />}
+  <span><slot /></span>
+  {arrow && (
+    <Icon
+      name={isExternal ? 'arrow-up-right' : 'arrow-right'}
+      size={17}
+      class="transition-transform duration-200 group-hover:translate-x-0.5"
+    />
+  )}
+</a>

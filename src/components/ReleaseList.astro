@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { formatDateUpper } from '../lib/format';
+
+interface Props {
+  releases: CollectionEntry<'communiques'>[];
+  title: string;
+  linkLabel: string;
+  linkHref: string;
+}
+
+const { releases, title, linkLabel, linkHref } = Astro.props;
+---
+
+<aside class="rounded-xl bg-sage-100 px-6 py-6">
+  <div class="mb-3 flex items-center gap-3">
+    <span class="h-5 w-1 rounded bg-forest-300"></span>
+    <h3 class="text-lg font-semibold">{title}</h3>
+  </div>
+  {releases.slice(0, 2).map((release, index) => (
+    <a
+      href={`/communiques/${release.id}/`}
+      class:list={[
+        'block py-5 text-left focus-visible:ring-2',
+        index > 0 && 'border-t border-forest-100/70',
+      ]}
+    >
+      <span class="text-xs font-medium tracking-wider text-forest-600">
+        {formatDateUpper(release.data.date)}
+      </span>
+      <p class="mt-2 text-base font-medium leading-relaxed">{release.data.title}</p>
+    </a>
+  ))}
+  <a href={linkHref} class="link-arrow mt-2">
+    {linkLabel}
+    <Icon name="arrow-right" size={16} />
+  </a>
+</aside>

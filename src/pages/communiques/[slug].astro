@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import ArticleView from '../../components/ArticleView.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const releases = await getCollection('communiques');
+  return releases.map((release) => ({
+    params: { slug: release.id },
+    props: { release },
+  }));
+}
+
+interface Props {
+  release: CollectionEntry<'communiques'>;
+}
+
+const { release } = Astro.props;
+const title = release.data.seoTitle ?? release.data.title;
+const description = release.data.seoDescription ?? release.data.description;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={release.data.image}
+  type="article"
+  publishedTime={release.data.date.toISOString()}
+  section="Communiqué"
+  author={site.officialName}
+>
+  <ArticleView
+    entry={release}
+    section="Gouvernement du Maniema"
+    backHref="/communiques/"
+    backLabel="Tous les communiqués"
+    label="Communiqué officiel"
+  />
+</BaseLayout>

@@ -1,0 +1,183 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { site } from '../lib/content';
+import { navigation, isCurrentPath } from '../lib/nav';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="relative z-30 bg-white">
+  <div class="border-b border-line bg-sage-100">
+    <div class="container-page flex items-center justify-between gap-4 py-2.5 text-[11px] text-muted sm:text-xs">
+      <span class="truncate">{site.utilityText}</span>
+      <span class="hidden shrink-0 items-center gap-2 sm:flex">
+        <span class="h-2 w-2 rounded-full bg-forest-300"></span>
+        {site.country}
+      </span>
+    </div>
+  </div>
+
+  <div class="border-b border-line">
+    <div class="container-page flex items-center justify-between gap-4 py-4 lg:gap-7">
+      <a href="/" class="shrink-0 focus-visible:ring-2" aria-label={`${site.name} — Accueil`}>
+        <Brand />
+      </a>
+
+      <nav class="hidden items-center gap-4 lg:flex xl:gap-7" aria-label="Navigation principale">
+        {navigation.map((item) => {
+          const active = isCurrentPath(currentPath, item.href);
+          return (
+            <a
+              href={item.href}
+              aria-current={active ? 'page' : undefined}
+              class:list={[
+                'border-b-2 py-2 text-sm font-medium transition-colors',
+                active
+                  ? 'border-forest-600 text-forest-800'
+                  : 'border-transparent text-muted hover:text-forest-800',
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <div class="flex shrink-0 items-center gap-2">
+        <button
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-sage-100"
+          aria-label="Rechercher"
+          aria-controls="site-search"
+          aria-expanded="false"
+          data-search-toggle
+        >
+          <Icon name="search" size={21} />
+        </button>
+        <a
+          href="/contact/"
+          class="hidden min-h-11 items-center gap-3 rounded-md border border-forest-100 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-forest-200 hover:bg-sage-100 sm:inline-flex"
+        >
+          Nous contacter
+          <Icon name="arrow-right" size={16} />
+        </a>
+        <button
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-sage-100 lg:hidden"
+          aria-label="Ouvrir le menu"
+          aria-controls="mobile-navigation"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          <span data-nav-icon-open><Icon name="menu" size={22} /></span>
+          <span class="hidden" data-nav-icon-close><Icon name="close" size={22} /></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="site-search" class="hidden border-t border-line bg-white" data-search-panel>
+      <form action="/actualites/" method="get" class="container-page flex flex-col gap-3 py-5 sm:flex-row">
+        <label class="sr-only" for="site-search-input">Rechercher une actualité</label>
+        <input
+          id="site-search-input"
+          name="q"
+          type="search"
+          placeholder="Rechercher une actualité…"
+          class="min-h-11 min-w-0 flex-1 rounded-md border border-forest-100 px-4 text-sm outline-none focus:border-forest-500 focus:ring-2 focus:ring-forest-500/20"
+          data-search-input
+        />
+        <button
+          type="submit"
+          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-forest-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-950"
+        >
+          Rechercher
+          <Icon name="search" size={17} />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <nav
+    id="mobile-navigation"
+    class="hidden border-b border-line bg-white lg:hidden"
+    aria-label="Navigation mobile"
+    data-nav-menu
+    aria-hidden="true"
+  >
+    <div class="container-page py-4">
+      <div class="flex flex-col">
+        {navigation.map((item) => {
+          const active = isCurrentPath(currentPath, item.href);
+          return (
+            <a
+              href={item.href}
+              aria-current={active ? 'page' : undefined}
+              class:list={[
+                'border-b border-line/70 py-3.5 text-base font-medium transition-colors',
+                active ? 'text-forest-800' : 'text-ink hover:text-forest-800',
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+        <a href="/contact/" class="mt-4 inline-flex min-h-11 items-center justify-center gap-3 rounded-md bg-forest-800 px-5 py-3 text-sm font-semibold text-white">
+          Nous contacter
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const searchToggle = document.querySelector<HTMLButtonElement>('[data-search-toggle]');
+  const searchPanel = document.querySelector<HTMLElement>('[data-search-panel]');
+  const searchInput = document.querySelector<HTMLInputElement>('[data-search-input]');
+  const navToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const navMenu = document.querySelector<HTMLElement>('[data-nav-menu]');
+  const iconOpen = document.querySelector<HTMLElement>('[data-nav-icon-open]');
+  const iconClose = document.querySelector<HTMLElement>('[data-nav-icon-close]');
+
+  const setSearchOpen = (open: boolean) => {
+    if (!searchToggle || !searchPanel) return;
+    searchPanel.classList.toggle('hidden', !open);
+    searchToggle.setAttribute('aria-expanded', String(open));
+    if (open) searchInput?.focus();
+  };
+
+  const setNavOpen = (open: boolean) => {
+    if (!navToggle || !navMenu) return;
+    navMenu.classList.toggle('hidden', !open);
+    navMenu.setAttribute('aria-hidden', String(!open));
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+  };
+
+  searchToggle?.addEventListener('click', () => {
+    setSearchOpen(searchPanel?.classList.contains('hidden') ?? false);
+    setNavOpen(false);
+  });
+
+  navToggle?.addEventListener('click', () => {
+    setNavOpen(navMenu?.classList.contains('hidden') ?? false);
+    setSearchOpen(false);
+  });
+
+  navMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setNavOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setSearchOpen(false);
+      setNavOpen(false);
+    }
+  });
+
+  const query = new URLSearchParams(window.location.search).get('q');
+  if (query && searchInput) searchInput.value = query;
+</script>

@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { formatDate } from '../lib/format';
+
+interface Props {
+  post: CollectionEntry<'actualites'>;
+}
+
+const { post } = Astro.props;
+const searchText = `${post.data.title} ${post.data.description} ${post.data.category}`.toLowerCase();
+---
+
+<article
+  class="group overflow-hidden rounded-xl border border-line bg-white text-left transition-colors hover:border-forest-200"
+  data-article-card
+  data-category={post.data.category}
+  data-search={searchText}
+>
+  <a href={`/actualites/${post.id}/`} class="block focus-visible:ring-2">
+    <img
+      src={post.data.image}
+      alt={post.data.imageAlt}
+      width="800"
+      height="600"
+      loading="lazy"
+      decoding="async"
+      class="aspect-[3/2] w-full object-cover"
+    />
+    <div class="p-6">
+      <p class="text-xs font-medium text-forest-600">
+        {post.data.category} <span class="px-1 text-muted/60">·</span> {formatDate(post.data.date)}
+      </p>
+      <h2 class="mt-3 font-serif text-2xl leading-snug transition-colors group-hover:text-forest-700">
+        {post.data.title}
+      </h2>
+      <p class="mt-3 text-sm leading-6 text-muted">{post.data.description}</p>
+      <span class="link-arrow mt-5">
+        Lire l'article
+        <Icon name="arrow-right" size={16} />
+      </span>
+    </div>
+  </a>
+</article>

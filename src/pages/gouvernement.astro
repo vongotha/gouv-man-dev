@@ -1,0 +1,145 @@
+---
+import ContactBanner from '../components/ContactBanner.astro';
+import Icon from '../components/Icon.astro';
+import PageIntro from '../components/PageIntro.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { government } from '../lib/content';
+---
+
+<BaseLayout
+  title={government.seo.title}
+  description={government.seo.description}
+  image={government.seo.ogImage}
+>
+  <PageIntro
+    eyebrow={government.intro.eyebrow}
+    title={government.intro.title}
+    text={government.intro.text}
+    current="Le Gouvernement"
+  />
+
+  <section class="container-page grid items-center gap-12 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
+    <div>
+      <h2 class="max-w-2xl text-balance text-3xl leading-tight sm:text-4xl">
+        {government.story.title}
+      </h2>
+      <div class="mt-6 space-y-4 text-base leading-8 text-muted">
+        {government.story.paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+      <img
+        src={government.story.image}
+        alt={government.story.imageAlt}
+        width="1200"
+        height="960"
+        class="aspect-[5/4] w-full rounded-xl border border-line object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="absolute -bottom-5 left-4 rounded-lg border border-line bg-white px-4 py-3 shadow-[var(--shadow-card)]">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.16em] text-forest-600">
+          {government.story.badgeTitle}
+        </p>
+        <p class="mt-1 font-serif text-lg text-ink">{government.story.badgeText}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-sage-100">
+    <div class="container-page py-14 lg:py-16">
+      <p class="eyebrow text-forest-600">{government.values.eyebrow}</p>
+      <h2 class="mt-3 max-w-3xl text-3xl leading-tight sm:text-4xl">{government.values.title}</h2>
+      <p class="mt-4 max-w-2xl text-base leading-7 text-muted">{government.values.text}</p>
+
+      <div class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {government.values.items.map((value) => (
+          <article class="rounded-xl border border-line bg-white p-6">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-forest-50 text-forest-500">
+              <Icon name={value.icon} size={22} />
+            </span>
+            <h3 class="mt-5 text-xl">{value.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-muted">{value.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-14 lg:py-16">
+    <p class="eyebrow text-forest-600">{government.institutions.eyebrow}</p>
+    <h2 class="mt-3 max-w-3xl text-3xl leading-tight sm:text-4xl">{government.institutions.title}</h2>
+    <p class="mt-4 max-w-2xl text-base leading-7 text-muted">{government.institutions.text}</p>
+
+    <div class="mt-9 grid gap-5 md:grid-cols-2">
+      {government.institutions.items.map((institution, index) => (
+        <article class="flex gap-5 rounded-xl border border-line bg-white p-6">
+          <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-forest-50 text-forest-500">
+            <Icon name={institution.icon} size={22} />
+          </span>
+          <div>
+            <p class="text-[10px] font-semibold uppercase tracking-[0.16em] text-forest-400">
+              0{index + 1}
+            </p>
+            <h3 class="mt-1 text-xl">{institution.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-muted">{institution.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-sage-200">
+    <div class="container-page grid gap-10 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-16">
+      <div>
+        <p class="eyebrow text-forest-600">{government.territories.eyebrow}</p>
+        <h2 class="mt-3 text-balance text-3xl leading-tight sm:text-4xl">
+          {government.territories.title}
+        </h2>
+        <p class="mt-5 max-w-xl text-base leading-7 text-muted">{government.territories.text}</p>
+        <p class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest-700">
+          <Icon name="map-pin" size={17} class="text-forest-500" />
+          Chef-lieu : Kindu
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {government.territories.items.map((territory, index) => (
+          <div
+            class:list={[
+              'flex min-h-24 flex-col justify-between rounded-xl border p-4',
+              index === 0 ? 'border-forest-200 bg-white' : 'border-line bg-white/70',
+            ]}
+          >
+            <Icon name={index === 0 ? 'building' : 'map-pin'} size={17} class="text-forest-500" />
+            <p class="mt-4 text-sm font-semibold text-ink">{territory}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-14 lg:py-16">
+    <figure class="mx-auto max-w-4xl text-center">
+      <Icon name="quote" size={30} class="mx-auto text-forest-400" />
+      <blockquote class="mt-5 font-serif text-2xl leading-snug text-ink sm:text-3xl">
+        {government.quote.text}
+      </blockquote>
+      <figcaption class="mt-5">
+        <p class="text-sm font-semibold text-ink">{government.quote.author}</p>
+        <p class="mt-1 text-xs text-muted">{government.quote.role}</p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <ContactBanner
+    eyebrow={government.cta.eyebrow}
+    title={government.cta.title}
+    text={government.cta.text}
+    buttonLabel={government.cta.buttonLabel}
+    buttonHref={government.cta.buttonHref}
+  />
+</BaseLayout>

@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Contact — Gouvernement du Maniema",
+    "description": "Contactez le Gouvernorat provincial du Maniema : coordonnées, horaires et formulaire de contact.",
+    "ogImage": "/images/og-default.png"
+  },
+  "intro": {
+    "eyebrow": "À votre écoute",
+    "title": "Nous contacter",
+    "text": "Une question sur l'action du Gouvernement, une demande d'information ou une suggestion ? Le Gouvernorat vous oriente vers le service compétent."
+  },
+  "form": {
+    "title": "Votre message",
+    "text": "Les champs marqués d'un astérisque sont obligatoires.",
+    "successMessage": "Votre message a bien été envoyé. Le Gouvernorat vous remercie et vous répondra dans les meilleurs délais.",
+    "errorMessage": "Le message n'a pas pu être envoyé. Vérifiez les informations saisies ou écrivez-nous directement par email.",
+    "privacyNote": "Les informations transmises sont utilisées uniquement pour traiter votre demande. Elles ne sont ni vendues ni cédées à des tiers."
+  },
+  "details": {
+    "title": "Coordonnées du Gouvernorat",
+    "text": "Le secrétariat du Gouvernorat accueille le public et oriente les demandes vers les services compétents.",
+    "notice": "Pour les demandes officielles, précisez l'objet de votre demande et joignez les références utiles. Les pièces complémentaires peuvent être déposées au secrétariat.",
+    "responseTime": "Le Gouvernorat s'efforce de répondre sous 3 à 5 jours ouvrables."
+  }
+}

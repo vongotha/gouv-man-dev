@@ -1,0 +1,697 @@
+media:
+  input: public/images
+  output: /images
+  rename: safe
+  categories: [image]
+  extensions: [jpg, jpeg, png, webp, avif, svg]
+
+components:
+  seo:
+    type: object
+    label: Référencement
+    fields:
+      - name: title
+        label: Titre SEO
+        type: string
+        required: true
+      - name: description
+        label: Description SEO
+        type: text
+        required: true
+      - name: ogImage
+        label: Image de partage
+        type: image
+        options:
+          categories: [image]
+
+  cta:
+    type: object
+    label: Bouton
+    fields:
+      - name: label
+        label: Libellé
+        type: string
+        required: true
+      - name: href
+        label: Lien
+        type: string
+        required: true
+        description: "Chemin interne (ex. /missions/) ou URL complète."
+
+  intro:
+    type: object
+    label: Introduction
+    fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: text
+        label: Texte
+        type: text
+
+  icon:
+    type: select
+    label: Icône
+    options:
+      values:
+        - name: landmark
+          label: Institution
+        - name: building
+          label: Bâtiment
+        - name: mail
+          label: Courrier
+        - name: sprout
+          label: Agriculture
+        - name: heart
+          label: Santé
+        - name: road
+          label: Infrastructures
+        - name: leaf
+          label: Environnement
+        - name: book
+          label: Éducation
+        - name: shield
+          label: Protection
+        - name: users
+          label: Communauté
+        - name: scale
+          label: Transparence
+        - name: briefcase
+          label: Administration
+        - name: map-pin
+          label: Territoire
+        - name: compass
+          label: Orientation
+        - name: globe
+          label: International
+        - name: search
+          label: Recherche
+
+content:
+  - name: settings
+    label: Réglages du site
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: name
+        label: Nom du site
+        type: string
+        required: true
+      - name: officialName
+        label: Nom officiel complet
+        type: string
+        required: true
+      - name: shortName
+        label: Nom court
+        type: string
+      - name: officialLabel
+        label: Mention officielle
+        type: string
+      - name: country
+        label: Pays
+        type: string
+      - name: utilityText
+        label: Texte de la barre supérieure
+        type: string
+        required: true
+      - name: tagline
+        label: Accroche
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: logo
+        label: Logo
+        type: image
+      - name: email
+        label: Email de contact
+        type: string
+        required: true
+      - name: phone
+        label: Téléphone
+        type: string
+      - name: address
+        label: Adresse
+        type: text
+      - name: hours
+        label: Horaires
+        type: string
+      - name: footerNote
+        label: Texte du pied de page
+        type: text
+      - name: footerTagline
+        label: Accroche du pied de page
+        type: string
+        required: true
+      - name: socials
+        label: Réseaux sociaux
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Nom
+            type: string
+            required: true
+          - name: url
+            label: URL
+            type: string
+            required: true
+
+  - name: home
+    label: Accueil
+    type: file
+    path: src/data/pages/home.json
+    format: json
+    fields:
+      - name: seo
+        component: seo
+      - name: hero
+        label: Bandeau principal
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: titleLine1
+            label: Titre — ligne 1
+            type: string
+            required: true
+          - name: titleLine2
+            label: Titre — ligne 2
+            type: string
+            required: true
+          - name: titleHighlight
+            label: Mot mis en avant
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: image
+            label: Image
+            type: image
+            required: true
+          - name: imageAlt
+            label: Texte alternatif de l'image
+            type: string
+            required: true
+          - name: primaryCta
+            label: Bouton principal
+            component: cta
+            required: true
+          - name: secondaryCta
+            label: Bouton secondaire
+            component: cta
+            required: true
+          - name: values
+            label: Valeurs affichées
+            type: string
+            list: true
+          - name: cardTitle
+            label: Titre de la carte sur l'image
+            type: string
+          - name: cardText
+            label: Texte de la carte sur l'image
+            type: text
+      - name: featured
+        label: Section À la une
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: linkLabel
+            label: Libellé du lien
+            type: string
+          - name: linkHref
+            label: Lien
+            type: string
+            required: true
+      - name: releases
+        label: Derniers communiqués
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: linkLabel
+            label: Libellé du lien
+            type: string
+          - name: linkHref
+            label: Lien
+            type: string
+            required: true
+      - name: newsletter
+        label: Bandeau de contact
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: buttonLabel
+            label: Libellé du bouton
+            type: string
+            required: true
+          - name: buttonHref
+            label: Lien du bouton
+            type: string
+            required: true
+
+  - name: government
+    label: Le Gouvernement
+    type: file
+    path: src/data/pages/government.json
+    format: json
+    fields:
+      - name: seo
+        component: seo
+      - name: intro
+        component: intro
+      - name: story
+        label: Notre mission
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: paragraphs
+            label: Paragraphes
+            type: text
+            list: true
+          - name: image
+            label: Image
+            type: image
+          - name: imageAlt
+            label: Texte alternatif de l'image
+            type: string
+          - name: badgeTitle
+            label: Surtitre du badge
+            type: string
+          - name: badgeText
+            label: Texte du badge
+            type: string
+      - name: values
+        label: Valeurs
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: items
+            label: Valeurs
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Titre
+                type: string
+                required: true
+              - name: text
+                label: Texte
+                type: text
+              - name: icon
+                label: Icône
+                component: icon
+      - name: institutions
+        label: Institutions
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: items
+            label: Institutions
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Titre
+                type: string
+                required: true
+              - name: text
+                label: Texte
+                type: text
+              - name: icon
+                label: Icône
+                component: icon
+      - name: territories
+        label: Territoires
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: items
+            label: Territoires
+            type: string
+            list: true
+      - name: quote
+        label: Citation
+        type: object
+        fields:
+          - name: text
+            label: Texte
+            type: text
+            required: true
+          - name: author
+            label: Auteur
+            type: string
+            required: true
+          - name: role
+            label: Fonction
+            type: string
+      - name: cta
+        label: Bandeau de contact
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: buttonLabel
+            label: Libellé du bouton
+            type: string
+            required: true
+          - name: buttonHref
+            label: Lien du bouton
+            type: string
+            required: true
+
+  - name: missions
+    label: Nos missions
+    type: file
+    path: src/data/pages/missions.json
+    format: json
+    fields:
+      - name: seo
+        component: seo
+      - name: intro
+        component: intro
+      - name: items
+        label: Missions
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: icon
+            label: Icône
+            component: icon
+          - name: text
+            label: Texte
+            type: text
+          - name: points
+            label: Points clés
+            type: string
+            list: true
+      - name: domains
+        label: Domaines d'intervention
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: items
+            label: Domaines
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Titre
+                type: string
+                required: true
+              - name: text
+                label: Texte
+                type: text
+              - name: icon
+                label: Icône
+                component: icon
+      - name: cta
+        label: Bandeau de contact
+        type: object
+        fields:
+          - name: eyebrow
+            label: Surtitre
+            type: string
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: buttonLabel
+            label: Libellé du bouton
+            type: string
+            required: true
+          - name: buttonHref
+            label: Lien du bouton
+            type: string
+            required: true
+
+  - name: actualites-page
+    label: Page Actualités
+    type: file
+    path: src/data/pages/actualites.json
+    format: json
+    fields:
+      - name: seo
+        component: seo
+      - name: intro
+        component: intro
+
+  - name: communiques-page
+    label: Page Communiqués
+    type: file
+    path: src/data/pages/communiques.json
+    format: json
+    fields:
+      - name: seo
+        component: seo
+      - name: intro
+        component: intro
+
+  - name: contact
+    label: Contact
+    type: file
+    path: src/data/pages/contact.json
+    format: json
+    fields:
+      - name: seo
+        component: seo
+      - name: intro
+        component: intro
+      - name: form
+        label: Formulaire
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: successMessage
+            label: Message de succès
+            type: text
+            required: true
+          - name: errorMessage
+            label: Message d'erreur
+            type: text
+            required: true
+          - name: privacyNote
+            label: Note de confidentialité
+            type: text
+      - name: details
+        label: Coordonnées
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: text
+            label: Texte
+            type: text
+          - name: notice
+            label: Encadré demandes officielles
+            type: text
+          - name: responseTime
+            label: Délai de réponse
+            type: string
+
+  - name: actualites
+    label: Actualités
+    type: collection
+    path: src/content/actualites
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, category, featured]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: category
+        label: Catégorie
+        type: select
+        required: true
+        options:
+          values:
+            - Vie institutionnelle
+            - Sur le terrain
+            - Sensibilisation
+            - Coopération
+      - name: description
+        label: Chapô / description
+        type: text
+        required: true
+      - name: image
+        label: Image
+        type: image
+        required: true
+      - name: imageAlt
+        label: Texte alternatif de l'image
+        type: string
+        required: true
+      - name: readingTime
+        label: Temps de lecture
+        type: string
+        required: true
+      - name: featured
+        label: Mettre à la une
+        type: boolean
+      - name: seoTitle
+        label: Titre SEO
+        type: string
+      - name: seoDescription
+        label: Description SEO
+        type: text
+      - name: body
+        label: Contenu de l'article
+        type: rich-text
+
+  - name: communiques
+    label: Communiqués
+    type: collection
+    path: src/content/communiques
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, category]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: category
+        label: Type
+        type: select
+        required: true
+        options:
+          values:
+            - Communiqué
+            - Déclaration
+            - Avis
+      - name: description
+        label: Résumé
+        type: text
+        required: true
+      - name: image
+        label: Image
+        type: image
+        required: true
+      - name: imageAlt
+        label: Texte alternatif de l'image
+        type: string
+        required: true
+      - name: readingTime
+        label: Temps de lecture
+        type: string
+        required: true
+      - name: featured
+        label: Mettre en avant
+        type: boolean
+      - name: seoTitle
+        label: Titre SEO
+        type: string
+      - name: seoDescription
+        label: Description SEO
+        type: text
+      - name: body
+        label: Contenu du communiqué
+        type: rich-text

@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "Nos missions — Gouvernement du Maniema",
+    "description": "Découvrez les missions et les domaines d'intervention du Gouvernement provincial du Maniema.",
+    "ogImage": "/images/services.svg"
+  },
+  "intro": {
+    "eyebrow": "Nos missions",
+    "title": "Quatre engagements, une même ambition pour le Maniema.",
+    "text": "Le Gouvernement provincial agit au quotidien pour rapprocher l'administration des citoyens et construire un développement durable dans tous les territoires."
+  },
+  "items": [
+    {
+      "title": "Servir",
+      "icon": "landmark",
+      "text": "Une administration accessible, à l'écoute et au service de l'intérêt général.",
+      "points": [
+        "Accueil et orientation des citoyens",
+        "Coordination avec les administrations territoriales",
+        "Démarches administratives de proximité"
+      ]
+    },
+    {
+      "title": "Développer",
+      "icon": "sprout",
+      "text": "Soutenir les moteurs du développement provincial et valoriser les ressources locales.",
+      "points": [
+        "Agriculture, pêche et sécurité alimentaire",
+        "Infrastructures, énergie et aménagement du territoire",
+        "Appui aux acteurs économiques locaux"
+      ]
+    },
+    {
+      "title": "Protéger",
+      "icon": "shield",
+      "text": "Renforcer l'accès aux services essentiels et la protection des personnes vulnérables.",
+      "points": [
+        "Santé et action sociale",
+        "Éducation, jeunesse et culture",
+        "Environnement et cadre de vie"
+      ]
+    },
+    {
+      "title": "Coopérer",
+      "icon": "users",
+      "text": "Travailler avec les institutions, les partenaires et les communautés pour un impact durable.",
+      "points": [
+        "Dialogue avec les partenaires provinciaux",
+        "Coopération avec la société civile",
+        "Coordination des actions sur le territoire"
+      ]
+    }
+  ],
+  "domains": {
+    "eyebrow": "Domaines d'intervention",
+    "title": "Une action publique au plus près des besoins",
+    "text": "Les compétences provinciales couvrent les services essentiels et les leviers du développement du Maniema.",
+    "items": [
+      {
+        "title": "Administration et état civil",
+        "text": "Accompagner les citoyens dans leurs démarches et garantir un service public de proximité.",
+        "icon": "landmark"
+      },
+      {
+        "title": "Agriculture et développement rural",
+        "text": "Valoriser le potentiel agricole de la province et soutenir les producteurs locaux.",
+        "icon": "sprout"
+      },
+      {
+        "title": "Santé et action sociale",
+        "text": "Faciliter l'accès aux soins et renforcer la protection des personnes vulnérables.",
+        "icon": "heart"
+      },
+      {
+        "title": "Éducation, jeunesse et culture",
+        "text": "Soutenir l'éducation, l'épanouissement de la jeunesse et le patrimoine culturel.",
+        "icon": "book"
+      },
+      {
+        "title": "Infrastructures et énergie",
+        "text": "Améliorer les conditions de déplacement et favoriser l'accès aux services de base.",
+        "icon": "road"
+      },
+      {
+        "title": "Mines, environnement et cadre de vie",
+        "text": "Encadrer l'exploitation des ressources et préserver l'environnement.",
+        "icon": "leaf"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Une demande, une question ?",
+    "title": "Le Gouvernorat vous oriente vers le service compétent.",
+    "text": "Écrivez-nous pour connaître le service compétent ou présenter votre demande.",
+    "buttonLabel": "Contacter le Gouvernorat",
+    "buttonHref": "/contact/"
+  }
+}

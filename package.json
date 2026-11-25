@@ -1,0 +1,27 @@
+{
+  "name": "gouvernement-du-maniema",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "npm run build && wrangler pages dev dist",
+    "check": "astro check",
+    "deploy": "wrangler pages deploy dist --project-name gouvernement-du-maniema"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.6",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/lora": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.13",
+    "tailwindcss": "^4.3.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.168.0"
+  }
+}

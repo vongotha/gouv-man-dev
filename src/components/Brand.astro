@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../lib/content';
+
+interface Props {
+  light?: boolean;
+  class?: string;
+}
+
+const { light = false, class: className = '' } = Astro.props;
+---
+
+<div class:list={['flex items-center gap-3', light ? 'text-white' : 'text-forest-800', className]}>
+  <span
+    class:list={[
+      'flex h-[52px] w-11 shrink-0 items-center justify-center rounded-t-full rounded-b-2xl border-2 border-current',
+      light ? 'bg-white/5' : 'bg-white',
+    ]}
+  >
+    <Icon name="shield" size={28} strokeWidth={1.5} />
+  </span>
+  <span class="min-w-0">
+    <span class="block max-w-[15rem] text-[15px] font-bold leading-snug sm:text-base">
+      {site.name}
+    </span>
+    <span
+      class:list={[
+        'mt-1 block text-[10px] font-medium leading-snug sm:text-[11px]',
+        light ? 'text-forest-100' : 'text-muted',
+      ]}
+    >
+      {site.country}
+    </span>
+  </span>
+</div>

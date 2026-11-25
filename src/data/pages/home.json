@@ -1,0 +1,45 @@
+{
+  "seo": {
+    "title": "Gouvernement du Maniema — Ensemble, bâtissons l'avenir du Maniema",
+    "description": "Site officiel du Gouvernement provincial du Maniema : actualités, communiqués, missions et contacts du Gouvernorat.",
+    "ogImage": "/images/og-default.png"
+  },
+  "hero": {
+    "eyebrow": "Servir les citoyens. Bâtir l'avenir.",
+    "titleLine1": "Ensemble, bâtissons",
+    "titleLine2": "l'avenir du",
+    "titleHighlight": "Maniema.",
+    "text": "Le Gouvernement provincial du Maniema œuvre pour le développement, la dignité et le bien-être de toutes et de tous, dans chaque territoire de la province.",
+    "image": "/images/hero-maniema.svg",
+    "imageAlt": "Illustration du paysage du Maniema, entre collines, fleuve et végétation.",
+    "primaryCta": {
+      "label": "Découvrir le Gouvernement",
+      "href": "/gouvernement/"
+    },
+    "secondaryCta": {
+      "label": "Nos missions",
+      "href": "/missions/"
+    },
+    "values": ["Proximité", "Engagement", "Développement"],
+    "cardTitle": "Une administration, une conviction.",
+    "cardText": "Le développement du Maniema au cœur de notre action."
+  },
+  "featured": {
+    "eyebrow": "S'informer pour mieux agir",
+    "title": "À la une",
+    "linkLabel": "Toutes les actualités",
+    "linkHref": "/actualites/"
+  },
+  "releases": {
+    "title": "Derniers communiqués",
+    "linkLabel": "Tous les communiqués",
+    "linkHref": "/communiques/"
+  },
+  "newsletter": {
+    "eyebrow": "Restons en lien",
+    "title": "L'essentiel de nos actions, directement auprès de vous.",
+    "text": "Une question, une demande d'information ou une suggestion ? Le Gouvernorat vous répond.",
+    "buttonLabel": "Nous contacter",
+    "buttonHref": "/contact/"
+  }
+}

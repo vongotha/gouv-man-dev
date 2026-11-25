@@ -1,0 +1,60 @@
+---
+import ContactBanner from '../components/ContactBanner.astro';
+import Icon from '../components/Icon.astro';
+import MissionCard from '../components/MissionCard.astro';
+import PageIntro from '../components/PageIntro.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { missions } from '../lib/content';
+---
+
+<BaseLayout
+  title={missions.seo.title}
+  description={missions.seo.description}
+  image={missions.seo.ogImage}
+>
+  <PageIntro
+    eyebrow={missions.intro.eyebrow}
+    title={missions.intro.title}
+    text={missions.intro.text}
+    current="Nos missions"
+  />
+
+  <section class="container-page py-12 lg:py-16">
+    <div class="grid gap-6 md:grid-cols-2">
+      {missions.items.map((mission) => (
+        <MissionCard
+          icon={mission.icon}
+          title={mission.title}
+          text={mission.text}
+          points={mission.points}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-sage-100">
+    <div class="container-page py-14 lg:py-16">
+      <p class="eyebrow text-forest-600">{missions.domains.eyebrow}</p>
+      <h2 class="mt-3 max-w-3xl text-3xl leading-tight sm:text-4xl">{missions.domains.title}</h2>
+      <p class="mt-4 max-w-2xl text-base leading-7 text-muted">{missions.domains.text}</p>
+
+      <div class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {missions.domains.items.map((domain) => (
+          <article class="rounded-xl border border-line bg-white p-6">
+            <Icon name={domain.icon} size={24} class="mb-4 text-forest-500" />
+            <h3 class="text-xl">{domain.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-muted">{domain.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactBanner
+    eyebrow={missions.cta.eyebrow}
+    title={missions.cta.title}
+    text={missions.cta.text}
+    buttonLabel={missions.cta.buttonLabel}
+    buttonHref={missions.cta.buttonHref}
+  />
+</BaseLayout>

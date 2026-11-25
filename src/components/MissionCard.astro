@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+import type { IconName } from '../lib/content';
+
+interface Props {
+  icon: IconName;
+  title: string;
+  text: string;
+  points?: string[];
+  href?: string;
+  compact?: boolean;
+}
+
+const { icon, title, text, points = [], href, compact = false } = Astro.props;
+---
+
+<article class:list={['group rounded-xl border border-line bg-white p-6', compact ? '' : 'md:p-8']}>
+  <Icon name={icon} size={28} class="text-forest-500" />
+  <h2 class:list={['mt-4 font-serif', compact ? 'text-2xl' : 'text-3xl']}>{title}</h2>
+  <p class="mt-2 text-sm leading-6 text-muted">{text}</p>
+  {points.length > 0 && (
+    <ul class="mt-5 space-y-2.5 border-t border-line pt-5">
+      {points.map((point) => (
+        <li class="flex gap-2.5 text-sm leading-6 text-muted">
+          <Icon name="check" size={15} class="mt-1 shrink-0 text-forest-500" />
+          <span>{point}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+  {href && (
+    <a href={href} class="link-arrow mt-5">
+      En savoir plus
+      <Icon name="arrow-right" size={16} />
+    </a>
+  )}
+</article>

@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "Le Gouvernement — Gouvernement du Maniema",
+    "description": "Découvrez la mission, les valeurs, l'organisation et les territoires du Gouvernement provincial du Maniema.",
+    "ogImage": "/images/og-default.png"
+  },
+  "intro": {
+    "eyebrow": "Le Gouvernement provincial",
+    "title": "Une administration au service de la dignité humaine.",
+    "text": "Le Gouvernement provincial du Maniema agit pour le développement, la dignité et le bien-être de toutes et de tous, dans chaque territoire de la province."
+  },
+  "story": {
+    "title": "Servir les communautés, partout dans la province.",
+    "paragraphs": [
+      "Le Gouvernement provincial du Maniema exerce les compétences qui lui sont confiées dans le cadre de la décentralisation. Son action vise à rapprocher l'administration des citoyens et à répondre aux besoins essentiels des communautés.",
+      "De Kindu aux territoires, le Gouvernorat coordonne les politiques provinciales et travaille avec les administrations locales, les partenaires et les acteurs de la société civile.",
+      "Cette plateforme officielle a pour vocation de rendre l'information publique plus accessible, de faciliter les démarches et de renforcer le dialogue entre l'administration et la population."
+    ],
+    "image": "/images/governance.svg",
+    "imageAlt": "Illustration d'un bâtiment institutionnel représentant le Gouvernorat.",
+    "badgeTitle": "Notre boussole",
+    "badgeText": "L'intérêt général"
+  },
+  "values": {
+    "eyebrow": "Nos valeurs",
+    "title": "Les principes qui guident notre action",
+    "text": "Une administration publique doit être lisible, accessible et responsable devant les citoyens.",
+    "items": [
+      {
+        "title": "Service public",
+        "text": "Placer l'intérêt général et la qualité du service rendu au cœur de chaque décision.",
+        "icon": "shield"
+      },
+      {
+        "title": "Proximité",
+        "text": "Être présent au plus près des communautés, dans les villes comme dans les territoires.",
+        "icon": "users"
+      },
+      {
+        "title": "Transparence",
+        "text": "Informer, expliquer et rendre compte des actions menées par le Gouvernement provincial.",
+        "icon": "scale"
+      },
+      {
+        "title": "Développement durable",
+        "text": "Préserver les ressources et construire des solutions durables pour les générations futures.",
+        "icon": "leaf"
+      }
+    ]
+  },
+  "institutions": {
+    "eyebrow": "Organisation",
+    "title": "Les institutions provinciales",
+    "text": "Le Gouvernement provincial s'appuie sur une organisation structurée pour assurer la continuité du service public.",
+    "items": [
+      {
+        "title": "Le Gouvernorat",
+        "text": "Assure la direction de l'exécutif provincial et la coordination de l'action gouvernementale.",
+        "icon": "building"
+      },
+      {
+        "title": "L'Assemblée provinciale",
+        "text": "Représente la population et participe au contrôle de l'action publique provinciale.",
+        "icon": "landmark"
+      },
+      {
+        "title": "Les ministères provinciaux",
+        "text": "Mettent en œuvre les politiques publiques dans leurs domaines de compétence.",
+        "icon": "briefcase"
+      },
+      {
+        "title": "Les administrations territoriales",
+        "text": "Assurent la présence de l'État et l'accompagnement des communautés au niveau local.",
+        "icon": "map-pin"
+      }
+    ]
+  },
+  "territories": {
+    "eyebrow": "Notre territoire",
+    "title": "Une province, sept territoires et une ville",
+    "text": "Le Maniema s'étend au cœur de la République démocratique du Congo. Sa diversité naturelle et humaine constitue un atout majeur pour son développement.",
+    "items": ["Kindu", "Kabambare", "Kailo", "Kasongo", "Kibombo", "Lubutu", "Pangi", "Punia"]
+  },
+  "quote": {
+    "text": "Un Gouvernement à l'écoute, des services accessibles et une action publique tournée vers les résultats : c'est l'engagement que nous portons pour le Maniema.",
+    "author": "Le Gouvernement provincial du Maniema",
+    "role": "Kindu, chef-lieu de la province"
+  },
+  "cta": {
+    "eyebrow": "Travaillons ensemble",
+    "title": "Une question sur l'organisation du Gouvernement ?",
+    "text": "Le Gouvernorat vous oriente vers l'institution ou le service compétent.",
+    "buttonLabel": "Nous contacter",
+    "buttonHref": "/contact/"
+  }
+}

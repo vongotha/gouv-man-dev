@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title">
+  <title id="title">Paysage du Maniema, entre collines, fleuve et végétation</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f5ea"/>
+      <stop offset="1" stop-color="#e5f0e7"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7d3a0"/>
+      <stop offset="1" stop-color="#c8a24a"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9eee5"/>
+      <stop offset="1" stop-color="#93c9b4"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b7758"/>
+      <stop offset="1" stop-color="#14523a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="960" fill="url(#sky)"/>
+  <circle cx="850" cy="235" r="128" fill="url(#sun)" opacity=".9"/>
+  <circle cx="850" cy="235" r="168" fill="none" stroke="#c8a24a" stroke-opacity=".18" stroke-width="2"/>
+
+  <g stroke="#1f5b43" stroke-opacity=".12" fill="none" stroke-width="1.5">
+    <path d="M-40 290 C220 210 380 320 610 245 S980 175 1240 255"/>
+    <path d="M-20 340 C240 260 390 370 620 295 S990 225 1230 305"/>
+    <path d="M-40 390 C220 310 380 420 610 345 S980 275 1240 355"/>
+  </g>
+
+  <path d="M0 560 C150 470 290 500 425 545 C550 585 690 500 820 510 C1020 525 1110 470 1200 500 L1200 960 L0 960Z" fill="#c7ddcf"/>
+  <path d="M0 625 C180 540 315 590 460 620 C605 650 720 575 870 600 C1030 625 1120 570 1200 590 L1200 960 L0 960Z" fill="#8fba9f"/>
+  <path d="M0 700 C190 645 310 690 460 700 C650 712 780 655 940 680 C1060 700 1140 670 1200 680 L1200 960 L0 960Z" fill="#4d9070"/>
+
+  <path d="M610 540 C500 640 720 700 635 790 C570 860 650 910 690 960 L865 960 C790 880 750 820 800 750 C860 665 745 610 760 540Z" fill="url(#river)"/>
+  <path d="M655 590 C610 665 715 710 675 785 C648 838 690 900 710 960" fill="none" stroke="#f5fbf8" stroke-opacity=".65" stroke-width="10" stroke-linecap="round"/>
+  <path d="M705 585 C680 650 760 705 715 780" fill="none" stroke="#1f5b43" stroke-opacity=".15" stroke-width="3"/>
+
+  <path d="M0 790 C180 735 300 790 440 810 C600 833 760 785 920 805 C1050 820 1130 790 1200 800 L1200 960 L0 960Z" fill="#1f5b43"/>
+  <path d="M0 860 C170 820 300 875 460 880 C650 886 800 840 980 860 C1080 870 1150 855 1200 860 L1200 960 L0 960Z" fill="#163c2d"/>
+
+  <g fill="url(#field)" opacity=".9">
+    <path d="M60 820 C190 790 330 815 450 845 L430 890 C300 860 180 845 70 870Z"/>
+    <path d="M70 895 C210 865 340 885 470 912 L455 940 C320 918 190 900 80 930Z"/>
+  </g>
+  <g stroke="#d9ba6c" stroke-opacity=".55" stroke-width="3" fill="none">
+    <path d="M90 838 C210 812 330 832 438 858"/>
+    <path d="M95 862 C215 837 335 857 440 882"/>
+    <path d="M100 918 C225 892 345 912 455 936"/>
+  </g>
+
+  <g>
+    <path d="M180 690 l34 -70 34 70Z" fill="#1f5b43"/>
+    <path d="M208 690 l26 -100 26 100Z" fill="#287152"/>
+    <rect x="230" y="690" width="8" height="42" fill="#5b3f2b"/>
+    <path d="M285 700 l28 -58 28 58Z" fill="#1f5b43"/>
+    <rect x="309" y="700" width="7" height="34" fill="#5b3f2b"/>
+    <path d="M930 665 l36 -78 36 78Z" fill="#1f5b43"/>
+    <rect x="962" y="665" width="8" height="48" fill="#5b3f2b"/>
+    <path d="M1010 690 l27 -56 27 56Z" fill="#287152"/>
+    <rect x="1033" y="690" width="7" height="32" fill="#5b3f2b"/>
+  </g>
+
+  <g>
+    <rect x="345" y="748" width="66" height="42" rx="2" fill="#f8f5ea"/>
+    <path d="M333 750 378 718 423 750Z" fill="#1a4936"/>
+    <rect x="367" y="764" width="14" height="26" fill="#c8a24a"/>
+    <rect x="433" y="765" width="52" height="34" rx="2" fill="#f8f5ea"/>
+    <path d="M423 767 459 742 495 767Z" fill="#1a4936"/>
+    <rect x="452" y="777" width="11" height="22" fill="#c8a24a"/>
+  </g>
+
+  <g fill="none" stroke="#1f5b43" stroke-width="3" stroke-linecap="round" opacity=".6">
+    <path d="M170 250 q12 -14 24 0 q12 -14 24 0"/>
+    <path d="M240 210 q9 -10 18 0 q9 -10 18 0"/>
+    <path d="M1010 300 q10 -12 20 0 q10 -12 20 0"/>
+  </g>
+
+  <g opacity=".92">
+    <path d="M690 735 q30 -18 60 0 l-8 12 q-22 -10 -44 0Z" fill="#f8f5ea"/>
+    <path d="M706 748 q14 -7 28 0 l-4 7 q-10 -4 -20 0Z" fill="#1f5b43"/>
+  </g>
+</svg>

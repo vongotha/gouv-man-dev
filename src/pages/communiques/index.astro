@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from '../../components/Icon.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { communiquesPage } from '../../lib/content';
+import { formatDateUpper } from '../../lib/format';
+
+const communiques = (await getCollection('communiques')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout
+  title={communiquesPage.seo.title}
+  description={communiquesPage.seo.description}
+  image={communiquesPage.seo.ogImage}
+>
+  <PageIntro
+    eyebrow={communiquesPage.intro.eyebrow}
+    title={communiquesPage.intro.title}
+    text={communiquesPage.intro.text}
+    current="Communiqués"
+  />
+
+  <section class="mx-auto max-w-4xl px-6 py-12 lg:py-16">
+    <div class="border-t border-line">
+      {communiques.map((release) => (
+        <a
+          href={`/communiques/${release.id}/`}
+          class="group flex items-center justify-between gap-6 border-b border-line py-7 transition-colors hover:bg-sage-100 focus-visible:ring-2"
+        >
+          <div>
+            <p class="text-xs font-medium tracking-wider text-forest-600">
+              {formatDateUpper(release.data.date)}
+            </p>
+            <h2 class="mt-3 max-w-2xl text-2xl leading-snug transition-colors group-hover:text-forest-700">
+              {release.data.title}
+            </h2>
+            <p class="mt-2 max-w-2xl text-sm leading-6 text-muted">{release.data.description}</p>
+          </div>
+          <span class="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-forest-600 transition-colors group-hover:border-forest-200 group-hover:bg-white sm:flex">
+            <Icon name="arrow-right" size={18} />
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

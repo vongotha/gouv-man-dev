@@ -1,0 +1,11 @@
+# Clé API Resend — https://resend.com/api-keys
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Destinataire(s) des messages. Plusieurs adresses possibles, séparées par des virgules.
+CONTACT_EMAIL=contact@example.com
+
+# Expéditeur affiché dans l'email. Le domaine doit être vérifié dans Resend.
+CONTACT_FROM=Gouvernement du Maniema <contact@example.com>
+
+# Optionnel : origines autorisées pour les appels cross-origin (previews, tests locaux).
+# ALLOWED_ORIGINS=https://gouvernement-du-maniema.pages.dev,http://localhost:4321

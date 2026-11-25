@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout
+  title="Page introuvable — Gouvernement du Maniema"
+  description="La page demandée est introuvable. Retrouvez les actualités, les missions et les informations du Gouvernement provincial du Maniema."
+  noindex
+>
+  <section class="relative overflow-hidden bg-sage-200">
+    <div
+      class="pointer-events-none absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="container-page relative flex min-h-[65vh] flex-col items-center justify-center py-20 text-center">
+      <span class="inline-flex h-16 w-16 items-center justify-center rounded-full border border-forest-100 bg-white text-forest-500">
+        <Icon name="search" size={28} />
+      </span>
+      <p class="mt-8 font-serif text-7xl text-forest-500 sm:text-8xl">404</p>
+      <h1 class="mt-4 text-balance text-3xl sm:text-4xl">Cette page est introuvable.</h1>
+      <p class="mt-4 max-w-xl text-base leading-7 text-muted">
+        Le lien est peut-être obsolète ou la page a été déplacée. Vous pouvez revenir à l'accueil ou
+        consulter les actualités du Gouvernement provincial.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Button href="/" variant="primary">Retour à l'accueil</Button>
+        <Button href="/actualites/" variant="outline">Voir les actualités</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

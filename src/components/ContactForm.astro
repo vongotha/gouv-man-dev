@@ -1,0 +1,277 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../lib/content';
+
+interface Props {
+  successMessage: string;
+  errorMessage: string;
+  privacyNote: string;
+}
+
+const { successMessage, errorMessage, privacyNote } = Astro.props;
+---
+
+<form
+  class="space-y-5"
+  action="/api/contact"
+  method="post"
+  data-contact-form
+  data-success-message={successMessage}
+  data-error-message={errorMessage}
+>
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class="form-label" for="contact-name">
+        Nom complet <span class="text-forest-600" aria-hidden="true">*</span>
+      </label>
+      <input
+        class="form-input"
+        id="contact-name"
+        name="name"
+        type="text"
+        autocomplete="name"
+        required
+        minlength="2"
+        maxlength="100"
+        placeholder="Votre nom et prénom"
+        aria-describedby="contact-name-error"
+      />
+      <p class="form-error hidden" id="contact-name-error" data-error-for="name"></p>
+    </div>
+
+    <div>
+      <label class="form-label" for="contact-email">
+        Adresse email <span class="text-forest-600" aria-hidden="true">*</span>
+      </label>
+      <input
+        class="form-input"
+        id="contact-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="254"
+        placeholder="vous@exemple.com"
+        aria-describedby="contact-email-error"
+      />
+      <p class="form-error hidden" id="contact-email-error" data-error-for="email"></p>
+    </div>
+  </div>
+
+  <div>
+    <label class="form-label" for="contact-message">
+      Votre message <span class="text-forest-600" aria-hidden="true">*</span>
+    </label>
+    <textarea
+      class="form-input min-h-40 resize-y"
+      id="contact-message"
+      name="message"
+      rows="6"
+      required
+      minlength="10"
+      maxlength="5000"
+      placeholder="Décrivez votre demande, votre question ou votre suggestion."
+      aria-describedby="contact-message-error"
+    ></textarea>
+    <p class="form-error hidden" id="contact-message-error" data-error-for="message"></p>
+  </div>
+
+  <div class="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+    <label for="contact-website">Site web</label>
+    <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <p class="text-xs leading-relaxed text-stone-500">{privacyNote}</p>
+
+  <div class="flex flex-col gap-4 border-t border-stone-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
+    <p class="inline-flex items-center gap-2 text-xs font-semibold text-stone-500">
+      <Icon name="shield" size={15} class="text-forest-600" />
+      Vos données restent confidentielles.
+    </p>
+    <button
+      type="submit"
+      class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-forest-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-950 disabled:cursor-not-allowed disabled:opacity-70"
+      data-submit-button
+    >
+      <span class="hidden" data-submit-spinner>
+        <Icon name="loader" size={18} class="animate-spin" />
+      </span>
+      <span data-submit-icon>
+        <Icon name="send" size={18} />
+      </span>
+      <span data-submit-label>Envoyer le message</span>
+    </button>
+  </div>
+
+  <div
+    class="form-status hidden"
+    data-form-status
+    data-tone="success"
+    role="status"
+    aria-live="polite"
+    tabindex="-1"
+  ></div>
+
+  <noscript>
+    <p class="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+      JavaScript est nécessaire pour envoyer ce formulaire. Vous pouvez aussi écrire à
+      <a class="font-bold underline" href={`mailto:${site.email}`}>{site.email}</a>.
+    </p>
+  </noscript>
+</form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+
+  if (form) {
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+    const button = form.querySelector<HTMLButtonElement>('[data-submit-button]');
+    const label = form.querySelector<HTMLElement>('[data-submit-label]');
+    const spinner = form.querySelector<HTMLElement>('[data-submit-spinner]');
+    const icon = form.querySelector<HTMLElement>('[data-submit-icon]');
+    const originalLabel = label?.textContent ?? 'Envoyer le message';
+    const fields = ['name', 'email', 'message'] as const;
+    type FieldName = (typeof fields)[number];
+
+    const setFieldError = (field: FieldName, message: string) => {
+      const input = form.elements.namedItem(field);
+      const error = form.querySelector<HTMLElement>(`[data-error-for="${field}"]`);
+      if (input instanceof HTMLElement) input.setAttribute('aria-invalid', 'true');
+      if (error) {
+        error.textContent = message;
+        error.classList.remove('hidden');
+      }
+    };
+
+    const clearErrors = () => {
+      fields.forEach((field) => {
+        const input = form.elements.namedItem(field);
+        const error = form.querySelector<HTMLElement>(`[data-error-for="${field}"]`);
+        if (input instanceof HTMLElement) input.removeAttribute('aria-invalid');
+        if (error) {
+          error.textContent = '';
+          error.classList.add('hidden');
+        }
+      });
+      if (status) {
+        status.textContent = '';
+        status.classList.add('hidden');
+      }
+    };
+
+    const showStatus = (tone: 'success' | 'error', message: string) => {
+      if (!status) return;
+      status.dataset.tone = tone;
+      status.textContent = message;
+      status.classList.remove('hidden');
+      status.focus({ preventScroll: true });
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    const setLoading = (loading: boolean) => {
+      if (button) button.disabled = loading;
+      form.setAttribute('aria-busy', String(loading));
+      if (label) label.textContent = loading ? 'Envoi en cours…' : originalLabel;
+      spinner?.classList.toggle('hidden', !loading);
+      icon?.classList.toggle('hidden', loading);
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearErrors();
+
+      const data = new FormData(form);
+      const payload = {
+        name: String(data.get('name') ?? '').trim(),
+        email: String(data.get('email') ?? '').trim(),
+        message: String(data.get('message') ?? '').trim(),
+        website: String(data.get('website') ?? ''),
+      };
+
+      const errors: Partial<Record<FieldName, string>> = {};
+      if (payload.name.length < 2) errors.name = 'Indiquez votre nom complet.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
+        errors.email = 'Indiquez une adresse email valide.';
+      }
+      if (payload.message.length < 10) {
+        errors.message = 'Votre message doit contenir au moins 10 caractères.';
+      }
+
+      if (Object.keys(errors).length > 0) {
+        (Object.entries(errors) as Array<[FieldName, string]>).forEach(([field, message]) => {
+          setFieldError(field, message);
+        });
+        const firstField = fields.find((field) => errors[field]);
+        if (firstField) {
+          const firstInput = form.elements.namedItem(firstField);
+          if (firstInput instanceof HTMLElement) firstInput.focus();
+        }
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const controller = new AbortController();
+        const timeout = window.setTimeout(() => controller.abort(), 15000);
+        const response = await fetch(form.action || '/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+        window.clearTimeout(timeout);
+
+        const result = (await response.json().catch(() => null)) as {
+          ok?: boolean;
+          message?: string;
+          error?: string;
+          fields?: Record<string, string>;
+        } | null;
+
+        if (!response.ok || !result?.ok) {
+          if (result?.fields) {
+            Object.entries(result.fields).forEach(([field, message]) => {
+              if (fields.includes(field as FieldName) && typeof message === 'string') {
+                setFieldError(field as FieldName, message);
+              }
+            });
+          }
+          throw new Error(
+            result?.error ||
+              form.dataset.errorMessage ||
+              'Le message n’a pas pu être envoyé. Réessayez dans un instant.',
+          );
+        }
+
+        form.reset();
+        showStatus(
+          'success',
+          result.message ||
+            form.dataset.successMessage ||
+            'Votre message a bien été envoyé.',
+        );
+      } catch (error) {
+        const isTimeout = error instanceof DOMException && error.name === 'AbortError';
+        const isNetwork =
+          error instanceof TypeError ||
+          (error instanceof Error && /fetch|network/i.test(error.message));
+        const message = isTimeout
+          ? 'La requête a expiré. Vérifiez votre connexion et réessayez.'
+          : isNetwork
+            ? form.dataset.errorMessage ||
+              'Le message n’a pas pu être envoyé. Vérifiez votre connexion.'
+            : error instanceof Error && error.message
+              ? error.message
+              : form.dataset.errorMessage ||
+                'Le message n’a pas pu être envoyé. Réessayez dans un instant.';
+        showStatus('error', message);
+      } finally {
+        setLoading(false);
+      }
+    });
+  }
+</script>

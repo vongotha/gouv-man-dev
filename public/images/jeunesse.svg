@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title">
+  <title id="title">Jeunes du Maniema réunis autour de la citoyenneté</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f5ea"/>
+      <stop offset="1" stop-color="#edf3e7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="960" fill="url(#bg)"/>
+  <circle cx="900" cy="220" r="118" fill="#d9ba6c" opacity=".65"/>
+  <circle cx="900" cy="220" r="158" fill="none" stroke="#c8a24a" stroke-opacity=".22" stroke-width="2"/>
+  <g stroke="#285b3d" stroke-opacity=".1" fill="none" stroke-width="1.5">
+    <path d="M0 280 C210 210 390 320 610 250 S980 200 1200 270"/>
+    <path d="M0 330 C210 260 390 370 610 300 S980 250 1200 320"/>
+    <path d="M0 380 C210 310 390 420 610 350 S980 300 1200 370"/>
+  </g>
+  <path d="M0 720 C190 670 360 705 540 725 C740 746 920 690 1200 715 L1200 960 L0 960Z" fill="#d7e8dc"/>
+  <path d="M0 790 C190 745 360 780 540 798 C740 818 920 765 1200 788 L1200 960 L0 960Z" fill="#a9cdb7"/>
+  <path d="M0 850 C190 815 360 845 540 858 C740 872 920 830 1200 850 L1200 960 L0 960Z" fill="#285b3d"/>
+
+  <g transform="translate(0 30)">
+    <circle cx="430" cy="345" r="56" fill="#c8a24a"/>
+    <path d="M366 560 q64 -150 128 0Z" fill="#285b3d"/>
+    <rect x="360" y="575" width="240" height="150" rx="14" fill="#f8f5ea" stroke="#d8d2c2" stroke-width="3"/>
+    <rect x="390" y="604" width="180" height="12" rx="6" fill="#285b3d" opacity=".2"/>
+    <rect x="390" y="628" width="140" height="12" rx="6" fill="#285b3d" opacity=".13"/>
+    <rect x="390" y="652" width="160" height="12" rx="6" fill="#285b3d" opacity=".13"/>
+    <circle cx="465" cy="455" r="48" fill="#d9ba6c"/>
+    <path d="M410 560 q55 -116 110 0Z" fill="#44835c"/>
+
+    <circle cx="710" cy="325" r="50" fill="#8fba9f"/>
+    <path d="M654 540 q56 -132 112 0Z" fill="#39784e"/>
+    <rect x="600" y="565" width="220" height="145" rx="14" fill="#f8f5ea" stroke="#d8d2c2" stroke-width="3"/>
+    <rect x="630" y="592" width="160" height="12" rx="6" fill="#285b3d" opacity=".2"/>
+    <rect x="630" y="616" width="122" height="12" rx="6" fill="#285b3d" opacity=".13"/>
+    <circle cx="805" cy="440" r="44" fill="#d9ba6c"/>
+    <path d="M756 550 q49 -104 98 0Z" fill="#568247"/>
+
+    <circle cx="930" cy="360" r="54" fill="#a0b68c"/>
+    <path d="M870 565 q60 -138 120 0Z" fill="#203e2e"/>
+    <path d="M860 600 q70 -20 140 0" stroke="#d9ba6c" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g fill="none" stroke="#285b3d" stroke-width="4" stroke-linecap="round" opacity=".55">
+    <path d="M230 300 q15 -17 30 0 q15 -17 30 0"/>
+    <path d="M1010 500 q13 -15 26 0 q13 -15 26 0"/>
+  </g>
+
+  <g transform="translate(250 620)">
+    <rect x="-46" y="-46" width="92" height="92" rx="24" fill="#f8f5ea" stroke="#d8d2c2" stroke-width="3"/>
+    <path d="M-20 -8h40a10 10 0 0 1 10 10v8a10 10 0 0 1-10 10h-24l-14 12V20h-2a10 10 0 0 1-10-10v-8a10 10 0 0 1 10-10Z" fill="#285b3d"/>
+    <circle cx="-8" cy="7" r="3" fill="#d9ba6c"/>
+    <circle cx="2" cy="7" r="3" fill="#d9ba6c"/>
+    <circle cx="12" cy="7" r="3" fill="#d9ba6c"/>
+  </g>
+
+  <path d="M0 880 C210 850 380 885 570 895 C770 906 960 870 1200 890 L1200 960 L0 960Z" fill="#173222"/>
+</svg>

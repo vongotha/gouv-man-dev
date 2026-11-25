@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
+  <title id="title">Gouvernement du Maniema — Site officiel</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a271c"/>
+      <stop offset="1" stop-color="#1f5b43"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9ba6c" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#d9ba6c" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0v42" fill="none" stroke="#ffffff" stroke-opacity=".045" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1070" cy="80" r="330" fill="url(#glow)"/>
+  <circle cx="1070" cy="495" r="230" fill="none" stroke="#d9ba6c" stroke-opacity=".13" stroke-width="2"/>
+
+  <g transform="translate(92 108)">
+    <path d="M64 0 178 42v78c0 68-46 112-114 132C-4 232-50 188-50 120V42L64 0Z" fill="#1f5b43" stroke="#d9ba6c" stroke-opacity=".45" stroke-width="3"/>
+    <path d="m64 40 10 20 22 3-16 16 4 22-20-10-20 10 4-22-16-16 22-3 10-20Z" fill="#fff"/>
+    <path d="M18 146c15-12 30-12 46 0s31 12 46 0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M18 170c15-12 30-12 46 0s31 12 46 0" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <text x="300" y="168" fill="#d9ba6c" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</text>
+  <text x="300" y="262" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700">Gouvernement du Maniema</text>
+  <text x="300" y="324" fill="#dfeee6" font-family="Arial, Helvetica, sans-serif" font-size="30">Site officiel du Gouvernement provincial</text>
+
+  <rect x="300" y="365" width="110" height="6" rx="3" fill="#c8a24a"/>
+
+  <text x="300" y="434" fill="#c7ddcf" font-family="Arial, Helvetica, sans-serif" font-size="24">Services publics</text>
+  <text x="300" y="474" fill="#c7ddcf" font-family="Arial, Helvetica, sans-serif" font-size="24">Institutions provinciales</text>
+  <text x="300" y="514" fill="#c7ddcf" font-family="Arial, Helvetica, sans-serif" font-size="24">Contacts et démarches</text>
+
+  <g transform="translate(820 392)">
+    <rect x="0" y="0" width="290" height="150" rx="22" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".14"/>
+    <path d="M35 40h42a12 12 0 0 1 12 12v18a12 12 0 0 1-12 12H57l-20 16V82h-2a12 12 0 0 1-12-12V52a12 12 0 0 1 12-12Z" fill="#c8a24a"/>
+    <rect x="110" y="42" width="140" height="10" rx="5" fill="#ffffff" fill-opacity=".4"/>
+    <rect x="110" y="66" width="108" height="10" rx="5" fill="#ffffff" fill-opacity=".24"/>
+    <rect x="35" y="108" width="180" height="10" rx="5" fill="#ffffff" fill-opacity=".18"/>
+  </g>
+
+  <text x="92" y="572" fill="#95c6ad" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="2">KINDU · MANIEMA · RDC</text>
+</svg>

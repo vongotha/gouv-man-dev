@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import Icon from './Icon.astro';
+import { formatDate } from '../lib/format';
+
+interface Props {
+  entry: CollectionEntry<'actualites'> | CollectionEntry<'communiques'>;
+  section: string;
+  backHref: string;
+  backLabel: string;
+  label: string;
+}
+
+const { entry, section, backHref, backLabel, label } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<article class="mx-auto max-w-4xl px-6 py-12 lg:py-16">
+  <a href={backHref} class="inline-flex items-center gap-2 text-sm font-semibold text-forest-600 transition-colors hover:text-forest-800">
+    <Icon name="arrow-right" size={16} class="rotate-180" />
+    {backLabel}
+  </a>
+
+  <p class="eyebrow mt-10 flex text-forest-600">{label}</p>
+  <h1 class="mt-5 text-balance text-4xl leading-tight tracking-tight sm:text-5xl">
+    {entry.data.title}
+  </h1>
+  <p class="mt-6 text-sm text-muted">
+    {formatDate(entry.data.date)} <span class="px-1">·</span> {entry.data.readingTime} <span class="px-1">·</span> {section}
+  </p>
+
+  <img
+    src={entry.data.image}
+    alt={entry.data.imageAlt}
+    width="1200"
+    height="675"
+    class="mt-9 aspect-[16/9] w-full rounded-xl border border-line object-cover"
+    loading="eager"
+    decoding="async"
+  />
+
+  <p class="mt-9 text-xl leading-relaxed text-ink">{entry.data.description}</p>
+
+  <div class="article-prose mt-8">
+    <Content />
+  </div>
+
+  <div class="mt-12 flex flex-col gap-5 rounded-xl border border-line bg-sage-100 p-6 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p class="text-sm font-semibold text-ink">Une question sur cette publication ?</p>
+      <p class="mt-1 text-sm text-muted">Le Gouvernorat vous oriente vers le service compétent.</p>
+    </div>
+    <a href="/contact/" class="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-md bg-forest-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-950">
+      Nous contacter
+      <Icon name="arrow-right" size={16} />
+    </a>
+  </div>
+</article>

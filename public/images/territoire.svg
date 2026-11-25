@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title">
+  <title id="title">Le territoire du Maniema, entre fleuve, collines et territoires</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f5ea"/>
+      <stop offset="1" stop-color="#e5f0e8"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3f2eb"/>
+      <stop offset="1" stop-color="#8fc4b1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="960" fill="url(#bg)"/>
+  <circle cx="890" cy="210" r="118" fill="#d9ba6c" opacity=".6"/>
+
+  <g stroke="#1f5b43" stroke-opacity=".1" fill="none" stroke-width="1.5">
+    <path d="M0 270 C200 200 380 310 600 240 S980 190 1200 260"/>
+    <path d="M0 320 C200 250 380 360 600 290 S980 240 1200 310"/>
+    <path d="M0 370 C200 300 380 410 600 340 S980 290 1200 360"/>
+    <path d="M0 420 C200 350 380 460 600 390 S980 340 1200 410"/>
+  </g>
+
+  <path d="M0 610 C170 530 330 570 490 600 C650 630 800 560 970 585 C1080 600 1150 570 1200 580 L1200 960 L0 960Z" fill="#c7ddcf"/>
+  <path d="M0 680 C180 610 340 655 520 675 C710 696 860 635 1040 660 C1120 671 1170 655 1200 660 L1200 960 L0 960Z" fill="#8fba9f"/>
+  <path d="M0 750 C190 700 350 740 540 755 C740 770 900 720 1080 740 C1140 747 1180 738 1200 742 L1200 960 L0 960Z" fill="#4d9070"/>
+
+  <path d="M570 540 C460 650 700 710 610 805 C560 858 640 915 680 960 L850 960 C770 880 720 820 780 745 C850 655 720 610 735 540Z" fill="url(#river)"/>
+  <path d="M615 585 C565 660 675 705 630 785 C600 840 645 902 665 960" fill="none" stroke="#f8fcfa" stroke-opacity=".65" stroke-width="10" stroke-linecap="round"/>
+
+  <g fill="#1f5b43">
+    <path d="M120 760 l46 -96 46 96Z"/>
+    <rect x="162" y="760" width="9" height="54" fill="#5b3f2b"/>
+    <path d="M210 790 l34 -70 34 70Z" fill="#287152"/>
+    <rect x="240" y="790" width="8" height="38" fill="#5b3f2b"/>
+    <path d="M960 730 l48 -100 48 100Z"/>
+    <rect x="1004" y="730" width="9" height="58" fill="#5b3f2b"/>
+    <path d="M1052 760 l36 -76 36 76Z" fill="#287152"/>
+    <rect x="1084" y="760" width="8" height="42" fill="#5b3f2b"/>
+  </g>
+
+  <g opacity=".9">
+    <rect x="300" y="770" width="64" height="38" rx="2" fill="#f8f5ea"/>
+    <path d="M289 772 332 742 375 772Z" fill="#1a4936"/>
+    <rect x="320" y="786" width="13" height="22" fill="#c8a24a"/>
+    <rect x="382" y="784" width="50" height="31" rx="2" fill="#f8f5ea"/>
+    <path d="M372 786 407 762 442 786Z" fill="#1a4936"/>
+  </g>
+
+  <g fill="none" stroke="#d9ba6c" stroke-width="2.5" stroke-dasharray="7 9" opacity=".8">
+    <path d="M600 490 L390 400 L280 520 L410 650 L600 490"/>
+    <path d="M600 490 L820 400 L950 530 L810 660 L600 490"/>
+    <path d="M600 490 L390 400"/>
+    <path d="M600 490 L420 690"/>
+  </g>
+
+  <g>
+    <g fill="#1f5b43" stroke="#f8f5ea" stroke-width="7">
+      <circle cx="390" cy="400" r="17"/>
+      <circle cx="280" cy="520" r="17"/>
+      <circle cx="410" cy="650" r="17"/>
+      <circle cx="420" cy="690" r="17"/>
+      <circle cx="820" cy="400" r="17"/>
+      <circle cx="950" cy="530" r="17"/>
+      <circle cx="810" cy="660" r="17"/>
+    </g>
+    <g fill="#c8a24a" stroke="#f8f5ea" stroke-width="7">
+      <circle cx="600" cy="490" r="24"/>
+    </g>
+    <path d="m600 474 4.5 9 10 1.5-7.2 7 1.7 10-9-4.7-9 4.7 1.7-10-7.2-7 10-1.5 4.5-9Z" fill="#163c2d"/>
+  </g>
+
+  <g transform="translate(600 430)">
+    <rect x="-22" y="-22" width="44" height="38" rx="8" fill="#f8f5ea" stroke="#1f5b43" stroke-width="3"/>
+    <path d="M-8 -10h16M-8 0h10" stroke="#1f5b43" stroke-width="3" stroke-linecap="round"/>
+    <path d="M0 16 l-10 14 22 -14Z" fill="#f8f5ea" stroke="#1f5b43" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <g fill="#1f5b43" opacity=".8">
+    <circle cx="1030" cy="340" r="5"/>
+    <circle cx="1060" cy="370" r="5"/>
+    <circle cx="1020" cy="400" r="5"/>
+    <circle cx="180" cy="330" r="5"/>
+    <circle cx="210" cy="360" r="5"/>
+  </g>
+
+  <path d="M0 870 C200 838 360 872 550 882 C760 894 950 858 1200 878 L1200 960 L0 960Z" fill="#1f5b43"/>
+</svg>

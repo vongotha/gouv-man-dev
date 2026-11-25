@@ -1,0 +1,127 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from '../../components/ArticleCard.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { actualitesPage } from '../../lib/content';
+
+const actualites = (await getCollection('actualites')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const categories = ['Tous', ...new Set(actualites.map((post) => post.data.category))];
+---
+
+<BaseLayout
+  title={actualitesPage.seo.title}
+  description={actualitesPage.seo.description}
+  image={actualitesPage.seo.ogImage}
+>
+  <PageIntro
+    eyebrow={actualitesPage.intro.eyebrow}
+    title={actualitesPage.intro.title}
+    text={actualitesPage.intro.text}
+    current="Actualités"
+  />
+
+  <section class="container-page py-12 lg:py-16">
+    <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrer par catégorie">
+      {categories.map((category) => (
+        <button
+          type="button"
+          data-article-filter={category}
+          aria-pressed={category === 'Tous' ? 'true' : 'false'}
+          class:list={[
+            'min-h-10 rounded-md px-4 py-2 text-sm font-medium transition-colors',
+            category === 'Tous'
+              ? 'bg-forest-800 text-white'
+              : 'bg-forest-50 text-forest-700 hover:bg-forest-100',
+          ]}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-6 flex flex-col gap-3 border-b border-line pb-6 sm:flex-row sm:items-center sm:justify-between">
+      <label class="sr-only" for="article-search">Rechercher un article</label>
+      <input
+        id="article-search"
+        type="search"
+        data-article-search
+        placeholder="Rechercher un article…"
+        class="min-h-11 w-full rounded-md border border-forest-100 px-4 text-sm outline-none focus:border-forest-500 focus:ring-2 focus:ring-forest-500/20 md:max-w-md"
+      />
+      <p class="text-sm text-muted" data-article-count>
+        {actualites.length} article{actualites.length > 1 ? 's' : ''}
+      </p>
+    </div>
+
+    <div class="mt-7 grid gap-7 md:grid-cols-2 lg:grid-cols-3" data-article-grid>
+      {actualites.map((post) => (
+        <ArticleCard post={post} />
+      ))}
+    </div>
+
+    <div class="hidden rounded-xl border border-line bg-sage-100 p-8 text-center" data-article-empty>
+      <p class="font-serif text-2xl">Aucun article ne correspond à votre recherche.</p>
+      <p class="mt-2 text-sm text-muted">Essayez un autre mot-clé ou une autre catégorie.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-article-card]'));
+  const filters = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-article-filter]'));
+  const search = document.querySelector<HTMLInputElement>('[data-article-search]');
+  const count = document.querySelector<HTMLElement>('[data-article-count]');
+  const empty = document.querySelector<HTMLElement>('[data-article-empty]');
+
+  let activeCategory = 'Tous';
+  let query = new URLSearchParams(window.location.search).get('q')?.trim() ?? '';
+
+  const normalize = (value: string) =>
+    value.toLocaleLowerCase('fr').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  query = normalize(query);
+  if (search && query) search.value = new URLSearchParams(window.location.search).get('q') ?? '';
+
+  const applyFilters = () => {
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const category = card.dataset.category ?? '';
+      const haystack = normalize(card.dataset.search ?? '');
+      const matchCategory = activeCategory === 'Tous' || category === activeCategory;
+      const matchQuery = !query || haystack.includes(query);
+      const show = matchCategory && matchQuery;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (count) count.textContent = `${visible} article${visible > 1 ? 's' : ''}`;
+    if (empty) empty.classList.toggle('hidden', visible > 0);
+  };
+
+  filters.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeCategory = button.dataset.articleFilter ?? 'Tous';
+      filters.forEach((item) => {
+        const active = item === button;
+        item.setAttribute('aria-pressed', String(active));
+        item.classList.toggle('bg-forest-800', active);
+        item.classList.toggle('text-white', active);
+        item.classList.toggle('bg-forest-50', !active);
+        item.classList.toggle('text-forest-700', !active);
+        item.classList.toggle('hover:bg-forest-100', !active);
+      });
+      applyFilters();
+    });
+  });
+
+  search?.addEventListener('input', () => {
+    query = normalize(search.value.trim());
+    applyFilters();
+  });
+
+  applyFilters();
+</script>

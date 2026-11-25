@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title">
+  <title id="title">Services publics et accueil des citoyens</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f5ea"/>
+      <stop offset="1" stop-color="#e4f0e8"/>
+    </linearGradient>
+    <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#287152"/>
+      <stop offset="1" stop-color="#163c2d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="960" fill="url(#bg)"/>
+  <circle cx="205" cy="190" r="94" fill="#d9ba6c" opacity=".62"/>
+  <g stroke="#1f5b43" stroke-opacity=".1" fill="none" stroke-width="1.5">
+    <path d="M0 300 C220 230 380 330 600 260 S980 210 1200 280"/>
+    <path d="M0 350 C220 280 380 380 600 310 S980 260 1200 330"/>
+    <path d="M0 400 C220 330 380 430 600 360 S980 310 1200 380"/>
+  </g>
+
+  <g>
+    <rect x="170" y="420" width="860" height="390" rx="36" fill="#fffdf7" stroke="#d8d2c2" stroke-width="3"/>
+    <path d="M170 520 q0 -100 100 -100 h660 q100 0 100 100v40H170Z" fill="#e9e4d6"/>
+    <rect x="210" y="520" width="780" height="250" fill="#f8f5ea"/>
+
+    <path d="M246 770V620q0 -88 88 -88h44q88 0 88 88v150Z" fill="url(#arch)"/>
+    <path d="M394 770V620q0 -88 88 -88h44q88 0 88 88v150Z" fill="#1f5b43"/>
+    <path d="M542 770V620q0 -88 88 -88h44q88 0 88 88v150Z" fill="url(#arch)"/>
+    <path d="M246 770V620q0 -88 88 -88h44q88 0 88 88v150" fill="none" stroke="#d9ba6c" stroke-opacity=".28" stroke-width="4"/>
+    <path d="M394 770V620q0 -88 88 -88h44q88 0 88 88v150" fill="none" stroke="#d9ba6c" stroke-opacity=".35" stroke-width="4"/>
+    <path d="M542 770V620q0 -88 88 -88h44q88 0 88 88v150" fill="none" stroke="#d9ba6c" stroke-opacity=".28" stroke-width="4"/>
+
+    <rect x="300" y="590" width="106" height="180" rx="8" fill="#f8f5ea"/>
+    <rect x="448" y="590" width="106" height="180" rx="8" fill="#f8f5ea"/>
+    <rect x="596" y="590" width="106" height="180" rx="8" fill="#f8f5ea"/>
+    <g fill="#1f5b43" opacity=".18">
+      <rect x="313" y="606" width="80" height="7" rx="3.5"/>
+      <rect x="313" y="622" width="58" height="7" rx="3.5"/>
+      <rect x="461" y="606" width="80" height="7" rx="3.5"/>
+      <rect x="461" y="622" width="58" height="7" rx="3.5"/>
+      <rect x="609" y="606" width="80" height="7" rx="3.5"/>
+      <rect x="609" y="622" width="58" height="7" rx="3.5"/>
+    </g>
+
+    <rect x="220" y="770" width="760" height="32" rx="16" fill="#d8d2c2"/>
+    <rect x="200" y="802" width="800" height="30" rx="15" fill="#e9e4d6"/>
+  </g>
+
+  <g>
+    <circle cx="320" cy="690" r="32" fill="#c8a24a"/>
+    <path d="M278 790 q42 -80 84 0Z" fill="#c8a24a"/>
+    <circle cx="556" cy="700" r="28" fill="#8fba9f"/>
+    <path d="M518 790 q38 -72 76 0Z" fill="#8fba9f"/>
+    <circle cx="764" cy="688" r="30" fill="#d9ba6c"/>
+    <path d="M724 790 q40 -76 80 0Z" fill="#d9ba6c"/>
+  </g>
+
+  <g>
+    <rect x="848" y="200" width="210" height="250" rx="16" fill="#fffdf7" stroke="#d8d2c2" stroke-width="3" transform="rotate(4 953 325)"/>
+    <g transform="rotate(4 953 325)">
+      <rect x="880" y="238" width="52" height="52" rx="10" fill="#1f5b43"/>
+      <path d="m906 252 4 8 9 1-7 7 2 9-8-4-8 4 2-9-7-7 9-1 4-8Z" fill="#d9ba6c"/>
+      <rect x="880" y="316" width="146" height="9" rx="4.5" fill="#1f5b43" opacity=".21"/>
+      <rect x="880" y="338" width="126" height="9" rx="4.5" fill="#1f5b43" opacity=".21"/>
+      <rect x="880" y="360" width="138" height="9" rx="4.5" fill="#1f5b43" opacity=".21"/>
+      <rect x="880" y="382" width="92" height="9" rx="4.5" fill="#1f5b43" opacity=".21"/>
+    </g>
+    <path d="M826 460 q22 -32 44 0 q-22 30 -44 0Z" fill="#287152"/>
+    <path d="M842 460 q8 -12 16 0 q-8 12 -16 0Z" fill="#f8f5ea"/>
+  </g>
+
+  <g fill="#1f5b43" opacity=".28">
+    <circle cx="1020" cy="590" r="5"/>
+    <circle cx="1050" cy="620" r="5"/>
+    <circle cx="1010" cy="650" r="5"/>
+  </g>
+
+  <path d="M0 856 C190 826 340 860 530 870 C740 882 930 846 1200 866 L1200 960 L0 960Z" fill="#1f5b43"/>
+</svg>
