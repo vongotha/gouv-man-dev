@@ -6,7 +6,7 @@ description: Ce projet a ete realiser en partenariat avec le minister de la defe
 image: /images/screenshot-2026-07-16-at-11-36-55-inframind-phase-1-wokwi-esp32-stm32-arduino-simulator.png
 imageAlt: "Creation du systeme de suivi "
 readingTime: 1 Minutes
-featured: true
+featured: false
 seoTitle: "CREATION D'INFRASTRUCTURE "
 seoDescription: BFKWFBLUflis'ov';os'dzf b;soif
 ---
